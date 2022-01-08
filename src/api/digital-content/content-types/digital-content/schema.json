@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "digital_contents",
+  "info": {
+    "singularName": "digital-content",
+    "pluralName": "digital-contents",
+    "displayName": "digitalContent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "unique": false,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {}
+    },
+    "contentId": {
+      "type": "uid"
+    },
+    "KeyWords": {
+      "type": "string",
+      "pluginOptions": {}
+    },
+    "Authors": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
