@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -17,20 +17,28 @@
       "unique": false,
       "pluginOptions": {}
     },
-    "description": {
+    "Description": {
       "type": "text",
       "pluginOptions": {}
     },
-    "contentId": {
-      "type": "uid"
-    },
-    "KeyWords": {
+    "Keywords": {
       "type": "string",
       "pluginOptions": {}
     },
-    "Authors": {
+    "Author": {
+      "type": "string"
+    },
+    "ContentId": {
       "type": "string",
-      "required": false
+      "required": true
+    },
+    "HostNodeIP": {
+      "type": "string",
+      "required": true
+    },
+    "HostNodePort": {
+      "type": "integer",
+      "required": true
     }
   }
 }
