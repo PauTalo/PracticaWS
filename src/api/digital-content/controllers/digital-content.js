@@ -11,11 +11,11 @@ const { sanitizeEntity } = require("strapi-utils");
             // some logic here
             
             let entity = await super.findOne(ctx)
-            let authors = entity.data.attributes.Authors
-            console.log(entity.data.attributes.Authors)
+            let author = entity.data.attributes.Author
+            console.log(entity.data.attributes.Author)
             
             
-            if(authors.includes(ctx.state.user.username)){
+            if(author.includes(ctx.state.user.username)){
                 return await super.update(ctx)
             } else {
                 return ctx.badRequest(401, [{ messages: [{ id: "You're not the author!" }] }]);
@@ -27,11 +27,11 @@ const { sanitizeEntity } = require("strapi-utils");
             // some logic here
             
             let entity = await super.findOne(ctx)
-            let authors = entity.data.attributes.Authors
-            console.log(entity.data.attributes.Authors)
+            let author = entity.data.attributes.Author
+            console.log(entity.data.attributes.Author)
             
             
-            if(authors.includes(ctx.state.user.username)){
+            if(author.includes(ctx.state.user.username)){
                 return await super.delete(ctx)
             } else {
                 return ctx.badRequest(401, [{ messages: [{ id: "You're not the author!" }] }]);
@@ -41,7 +41,7 @@ const { sanitizeEntity } = require("strapi-utils");
 
         async create(ctx){
 
-            ctx.request.body.data.Authors = ctx.state.user.username;
+            ctx.request.body.data.Author = ctx.state.user.username;
             let entity = await strapi.service('api::digital-content.digital-content').create(ctx.request.body)
             
             return entity
